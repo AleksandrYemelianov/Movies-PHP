@@ -2,7 +2,7 @@
 /**
  * @var \App\Kernel\Auth\AuthInterface $auth
  */
-//$user = $auth->user();
+//dd($auth->check());
 ?>
 
 <header class="p-3 text-bg-dark">

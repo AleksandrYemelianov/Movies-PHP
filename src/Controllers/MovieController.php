@@ -20,7 +20,7 @@ class MovieController extends Controller
     {
         $file = $this->request()->file('images');
         $filePath = $file->move('movies');
-        dd($this->getStorage()->uri($filePath));
+
         $validation = $this->request()->validate([
             'name' => ['require', 'min:5', 'max:10'],
         ]);

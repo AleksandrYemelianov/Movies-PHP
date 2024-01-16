@@ -51,7 +51,12 @@ class Validator implements ValidatorInterface
                 break;
             case 'email':
                 if (! filter_var($valueInput, FILTER_VALIDATE_EMAIL)) {
-                    return 'Field must be a valid email address';
+                    return "Field $key must be a valid email address";
+                }
+                break;
+            case 'confirmed':
+                if ($valueInput !== $this->data["{$key}_confirmation"]) {
+                    return "Field $key must be confirmed";
                 }
                 break;
         }

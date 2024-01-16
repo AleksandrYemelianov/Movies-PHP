@@ -24,11 +24,11 @@
                                     placeholder="Mark Robson"
                             >
                             <label for="name">Name</label>
-<!--                            --><?php //if ($session->has('name')) {?>
+                            <?php if ($session->has('name')) {?>
                                 <div id="name" class="invalid-feedback">
-<!--                                    --><?php //echo $session->getFlash('name')[0]?>
+                                    <?php echo $session->getFlash('name')[0]?>
                                 </div>
-<!--                            --><?php //}?>
+                            <?php }?>
                         </div>
                     </div>
                 </div>
@@ -43,11 +43,11 @@
                                     placeholder="name@areaweb.su"
                             >
                             <label for="email">E-mail</label>
-<!--                            --><?php //if ($session->has('email')) {?>
+                            <?php if ($session->has('email')) {?>
                                 <div id="email" class="invalid-feedback">
-<!--                                    --><?php //echo $session->getFlash('email')[0]?>
+                                    <?php echo $session->getFlash('email')[0]?>
                                 </div>
-<!--                            --><?php //}?>
+                            <?php }?>
                         </div>
                     </div>
                 </div>
@@ -62,11 +62,11 @@
                                     placeholder="*********"
                             >
                             <label for="password">Password</label>
-<!--                            --><?php //if ($session->has('password')) {?>
+                            <?php if ($session->has('password')) {?>
                                 <div id="password" class="invalid-feedback">
-<!--                                    --><?php //echo $session->getFlash('password')[0]?>
+                                    <?php echo $session->getFlash('password')[0]?>
                                 </div>
-<!--                            --><?php //}?>
+                            <?php }?>
                         </div>
                     </div>
                     <div class="col-md">

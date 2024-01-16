@@ -34,7 +34,7 @@ class Request implements RequestInterface
         return $this->server['REQUEST_METHOD'];
     }
 
-    public function input(string $key, $default = null): string
+    public function input(string $key, $default = null): ?string
     {
         return $this->post[$key] ?? $this->get[$key] ?? $default;
     }

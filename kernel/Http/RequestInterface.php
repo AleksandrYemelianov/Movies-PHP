@@ -13,7 +13,7 @@ interface RequestInterface
 
     public function method(): string;
 
-    public function input(string $key, $default = null): string;
+    public function input(string $key, $default = null): ?string;
 
     public function file(string $key): ?UploadedFileInterface;
 
