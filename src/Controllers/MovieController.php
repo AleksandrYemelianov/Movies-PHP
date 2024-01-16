@@ -18,7 +18,9 @@ class MovieController extends Controller
 
     public function store(): void
     {
-        dd($this->request()->file('images'));
+        $file = $this->request()->file('images');
+        $filePath = $file->move('movies');
+        dd($this->getStorage()->uri($filePath));
         $validation = $this->request()->validate([
             'name' => ['require', 'min:5', 'max:10'],
         ]);
