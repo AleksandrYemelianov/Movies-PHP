@@ -71,3 +71,15 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+.flex-label {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.flex-content {
+    display: flex;
+    gap: 8px;
+}

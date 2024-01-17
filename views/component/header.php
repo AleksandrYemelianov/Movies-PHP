@@ -2,7 +2,7 @@
 /**
  * @var \App\Kernel\Auth\AuthInterface $auth
  */
-//dd($auth->check());
+$user = $auth->user();
 ?>
 
 <header class="p-3 text-bg-dark">
@@ -46,7 +46,7 @@
             <div class="d-flex align-items-center text-end">
                 <?php if ($auth->check()) {?>
                     <div class="d-flex align-items-center column-gap-4">
-                        <p class="m-0"></p>
+                        <p class="m-0"><?php echo $user->getEmail()?></p>
                         <form action="/logout" method="post">
                             <button class="btn btn-danger d-flex align-items-center column-gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
