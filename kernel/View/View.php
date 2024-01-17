@@ -14,14 +14,14 @@ class View implements ViewInterface
     ) {
     }
 
-    public function page(string $name): void
+    public function page(string $name, array $data = []): void
     {
 
         $viewPath = APP_PATH."/views/pages/$name.php";
         if (! file_exists($viewPath)) {
             throw new ViewNotFoundException("View $name not found");
         }
-        extract($this->extractParams());
+        extract(array_merge($this->extractParams(), $data));
         include_once $viewPath;
     }
 

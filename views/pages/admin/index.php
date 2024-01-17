@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\Kernel\View\ViewInterface $view
- * @var array<\App\Models\Category> $categories
+ * @var array<\App\Models\CategoryModel> $categories
 // * @var array<\App\Models\Movie> $movies
  */
 ?>
@@ -59,10 +59,11 @@
                 </thead>
                 <tbody>
                 <?php
-foreach ($categories as $category) {
-    $view->component('admin/category', ['category' => $category]);
-}
-?>
+                    foreach ($categories as $category) { ?>
+                        <tr>
+                            <td><?php echo $category->getName()?></td>
+                        </tr>
+                        <?php } ?>
                 </tbody>
             </table>
         </div>
