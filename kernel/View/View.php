@@ -25,8 +25,9 @@ class View implements ViewInterface
         include_once $viewPath;
     }
 
-    public function component(string $name): void
+    public function component(string $name, array $data = []): void
     {
+
         $componentPath = APP_PATH."/views/component/$name.php";
 
         if (! file_exists($componentPath)) {
@@ -34,8 +35,8 @@ class View implements ViewInterface
 
             return;
         }
-        extract($this->extractParams());
-        include_once $componentPath;
+        extract(array_merge($this->extractParams(), $data));
+        include $componentPath;
     }
 
     private function extractParams(): array

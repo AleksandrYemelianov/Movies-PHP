@@ -27,4 +27,11 @@ class CategoryController extends Controller
         );
         $this->redirect('/admin');
     }
+
+    public function delete()
+    {
+        $idCategory = $this->request()->input('id');
+        $this->getDatabase()->delete('categories', ['id' => $idCategory]);
+        $this->redirect('/admin');
+    }
 }
