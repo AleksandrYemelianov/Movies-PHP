@@ -25,4 +25,17 @@ class CategoryService
 
         return $categories;
     }
+
+    public function store(string $name): int
+    {
+        return $this->database->insert(
+            'categories',
+            ['name' => $name]
+        );
+    }
+
+    public function delete(int $id): void
+    {
+        $this->database->delete('categories', ['id' => $id]);
+    }
 }
