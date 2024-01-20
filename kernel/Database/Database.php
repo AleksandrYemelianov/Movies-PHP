@@ -59,6 +59,19 @@ class Database implements DatabaseInterface
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function update(string $table, array $data, array $conditions = []): void
+    {
+        $fields = array_keys($data);
+        $set = implode(', ', array_map(fn ($field) => "$field = :$field", $fields));
+        $where = '';
+        if (count($conditions) > 0) {
+            $where = 'WHERE '.implode(' AND ', array_map(fn ($field) => "$field= :$field", array_keys($conditions)));
+        }
+        $sql = "UPDATE $table SET $set $where";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array_merge($data, $conditions));
+    }
+
     public function delete(string $table, array $conditions = []): void
     {
         $where = '';

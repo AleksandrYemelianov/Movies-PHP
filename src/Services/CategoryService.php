@@ -34,6 +34,26 @@ class CategoryService
         );
     }
 
+    public function find(int $id): ?CategoryModel
+    {
+        $category = $this->database->first('categories', ['id' => $id]);
+        if (! $category) {
+            return null;
+        }
+
+        return new CategoryModel(
+            id: $category['id'],
+            name: $category['name'],
+            createdAt: $category['created_at'],
+            updatedAt: $category['updated_at']
+        );
+    }
+
+    public function update(int $id, string $name): void
+    {
+        $this->database->update('categories', ['name' => $name], ['id' => $id]);
+    }
+
     public function delete(int $id): void
     {
         $this->database->delete('categories', ['id' => $id]);
