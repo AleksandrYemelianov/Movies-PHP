@@ -12,6 +12,7 @@ class Storage implements StorageInterface
 
     public function uri(string $path): string
     {
+
         $uri = $this->config->get('app.uri');
 
         return "$uri/$path";

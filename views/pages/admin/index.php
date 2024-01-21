@@ -2,6 +2,7 @@
 /**
  * @var \App\Kernel\View\ViewInterface $view
  * @var array<\App\Models\CategoryModel> $categories
+ * @var array<\App\Models\MovieModel> $movies
  */
 ?>
 
@@ -30,11 +31,10 @@
                 </tr>
                 </thead>
                 <tbody>
-<!--                --><?php
-//                foreach ($movies as $movie) {
-//                    $view->component('admin/movie', ['movie' => $movie]);
-//                }
-//?>
+                <?php
+                foreach ($movies as $movie) {
+                    $view->component('admin/movie', ['movie' => $movie]);
+                }?>
                 </tbody>
             </table>
 
